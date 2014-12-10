@@ -1,0 +1,53 @@
+.verbatim-selected-text{
+	position: relative;
+}
+
+.verbatim-button-container{
+	position: absolute;
+	width: 90px;
+	height: 40px;
+	background-color: rgb(83, 83, 83);
+	top: -50px;
+	z-index: 1000;
+}
+
+.verbatim-button-container::after{
+	content: '';
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background-color: rgb(83, 83, 83);
+	left: 50%;
+	margin-left: -4px;
+	bottom: -4px;
+	transform: rotate(45deg);
+}
+
+.verbatim-icon{
+	width: 50%;
+	height: 100%;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.verbatim-icon circle, .verbatim-icon path{
+	pointer-events:none;
+}
+
+.verbatim-icon:first-of-type{
+	border-right: 1px solid white;
+}
+
+.verbatim-text-area{
+	position: absolute;
+	background-color: rgb(83, 83, 83);
+	border: none;
+	border-right: 10px solid rgb(83, 83, 83);
+	color: white;
+	top: -40px;
+	width: 140px;
+	height: 35px;
+	left: 50%;
+	margin-left:-75px;
+	padding: 10px;
+}
