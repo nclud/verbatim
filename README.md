@@ -39,11 +39,33 @@ $(function(){
 ##Settings
 
 Verbatim comes with the following default settings:
-highlightParent: true,
-searchContainer: 'body',
-addedClass: 'verbatim-found-content',
-highlightedClass: 'highlight',
-highlightColor: '#FFFF00',
+
+###highlightParent - default: true
+
+type: boolean
+
+Set highlightParent to true if you want to highlight the parent element of the text that is selected.
+
+###searchContainer - default: 'body'
+
+type: jQuery selector
+
+Set the container that Verbatim will search for selected text. This will also limit the area in which content can be selected. If you only want a certain container to be selectable, make sure you change this setting using a jQuery selector(example: .content or #mainContainer);
+
+###highlightedClass - default: 'highlight'
+
+type: string
+
+Verbatim wraps the found content in a span element which is assigned a class, used to highlight the found text. You can change this class if you'd like, but make sure you update your CSS. 
+
+
+###highlightColor - default: '#FFFF00'
+
+type: hex color string
+
+Pretty self-explanatory: this setting allows you to change the background color of the text when it is both selected and when it is found.
+
+
 selectedClass: 'verbatim-selected-text',
 buttonClass: 'verbatim-button-container',
 defaultStyling: true,
