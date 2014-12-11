@@ -3,6 +3,10 @@ verbatim-js
 
 Verbatim is a jQuery plugin that allows deep-linking directly to content. When installed, website visitors will be able to highlight text content, generate a direct link to the content, and share the link via Twitter. When a user clicks on the generated link, the page will scroll and highlight the selected content. It's magic.
 
+Verbatim was built by Ramsay Lanier and Maxim Leyzerovich from [nclud](http://nclud.com). 
+
+Verbatim is released under the [GNU GPLv3 license](http://www.gnu.org/licenses/gpl.html). 
+
 
 ##Installation
 
@@ -43,7 +47,8 @@ $(document).verbatim({
  animated: true,
  animationSpeed: 2000,
  highlightParent: false,
- highlightColor: '#236075'
+ highlightColor: '#236075',
+ bitlyToken: '123456789012345980700123123'
 });
 ```
 
@@ -116,4 +121,14 @@ Sets the scrolling speed.
 
 Sets the amount of offset(in pixels) from the top of found content. Verbatim will scroll to the found content's offset less the amount of offset. This allows for some spacing between the top of the window and the found content.
 
+
+##Using Bitly For Link Shortening
+
+We highly recommend using Bitly to generate short links. The good news is that Verbatim will work with Bitly! All you need to do is add a [Bitly Authentication Token](http://dev.bitly.com/get_started.html). Simply add the token as a setting like so:
+
+```
+$(document).verbatim({
+ bitlyToken: '123456789012345980700123123'
+});
+```
 
