@@ -32,8 +32,19 @@ To use Verbatim, simply call it inside of a jQuery Document.ready() call, like s
 
 ```
 $(function(){
-  $(document).verbatim()}
+  $(document).verbatim();
 }
+```
+
+Or, with settings:
+
+```
+$(document).verbatim({
+ animated: true,
+ animationSpeed: 2000,
+	highlightParent: false,
+	highlightColor: '#236075'
+});
 ```
 
 ##Settings
