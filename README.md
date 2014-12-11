@@ -42,8 +42,8 @@ Or, with settings:
 $(document).verbatim({
  animated: true,
  animationSpeed: 2000,
-	highlightParent: false,
-	highlightColor: '#236075'
+ highlightParent: false,
+ highlightColor: '#236075'
 });
 ```
 
