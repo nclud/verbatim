@@ -41,38 +41,68 @@ $(function(){
 Verbatim comes with the following default settings:
 
 ###highlightParent
-*default*: true
+**default**: true
 
-*type*: boolean
+**type**: boolean
 
 Set highlightParent to true if you want to highlight the parent element of the text that is selected.
 
 ###searchContainer
-*default*: 'body'
+**default**: 'body'
 
-*type*: jQuery selector
+**type**: jQuery selector
 
 Set the container that Verbatim will search for selected text. This will also limit the area in which content can be selected. If you only want a certain container to be selectable, make sure you change this setting using a jQuery selector(example: .content or #mainContainer);
 
 ###highlightedClass
-*default*: 'highlight'
+**default**: 'highlight'
 
-*type*: string
+**type**: string
 
 Verbatim wraps the found content in a span element which is assigned a class, used to highlight the found text. You can change this class if you'd like, but make sure you update your CSS. 
 
 
 ###highlightColor
-*default*: '#FFFF00'
+**default**: '#FFFF00'
 
-*type*: hex color string
+**type**: hex color string
 
 Pretty self-explanatory: this setting allows you to change the background color of the text when it is both selected and when it is found.
 
 
-selectedClass: 'verbatim-selected-text',
-buttonClass: 'verbatim-button-container',
-defaultStyling: true,
-animated: true,
-animationSpeed: 2000,
-scrollingOffset: 200
+###selectedClass
+**deault**:'verbatim-selected-text'
+
+**type**: string
+
+When selected text from a Verbatim enabled container, Verbatim wraps the selected text in a span element. You can change this class if you'd like, but make sure you update your CSS. 
+
+###buttonClass
+**default**: 'verbatim-button-container'
+
+**type**: string
+
+Verbatim appends a div element with two buttons insode of the span element that wraps the selected text. You can change the class of the buttom container, but make sure you update your CSS. 
+
+###animated
+**default**: true
+
+**type**:boolean
+
+Animates scrolling to the content. Set to false to prevent animated scrolling.
+
+###animationSpeed
+**default**: 2000
+
+**type**: integer
+
+Sets the scrolling speed.
+
+###scrollingOffset
+**default**: 200
+
+**type**: integer
+
+Sets the amount of offset(in pixels) from the top of found content. Verbatim will scroll to the found content's offset less the amount of offset. This allows for some spacing between the top of the window and the found content.
+
+
