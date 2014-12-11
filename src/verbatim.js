@@ -18,12 +18,10 @@
 	var defaults = {
 		highlightParent: true,
 		searchContainer: 'body',
-		addedClass: 'verbatim-found-content',
 		highlightedClass: 'highlight',
 		highlightColor: '#FFFF00',
 		selectedClass: 'verbatim-selected-text',
 		buttonClass: 'verbatim-button-container',
-		defaultStyling: true,
 		animated: true,
 		animationSpeed: 2000,
 		scrollingOffset: 200
@@ -92,11 +90,11 @@
 				$('.' + settings.highlightedClass).parent().addClass(settings.highlightedClass);
 			}
 
-			if (settings.defaultStyling){
-				$('.' + settings.highlightedClass).css({
-					"background-color": settings.highlightColor 
-				});
-			}
+			// if (settings.defaultStyling){
+			// 	$('.' + settings.highlightedClass).css({
+			// 		"background-color": settings.highlightColor 
+			// 	});
+			// }
 		}
 
 		$.fn.getSelected = function(){
@@ -185,10 +183,8 @@
 				var textArea = document.createElement("textArea");
 
 				textArea.setAttribute("class", "verbatim-text-area");
+				textArea.setAttribute("wrap", "off");
 
-				if (settings.defaultStyling){
-					textArea.setAttribute("wrap", "off");
-				}
 				$('.' + settings.buttonClass).append(textArea);
 
 				if (settings.bitlyToken){
