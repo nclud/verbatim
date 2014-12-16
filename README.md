@@ -1,7 +1,7 @@
 Verbatim
 ===========
 
-Verbatim is a jQuery plugin that allows deep-linking directly to content. When installed, website visitors will be able to highlight text content, generate a direct link to the content, and share the link via Twitter. When a user clicks on the generated link, the page will scroll and highlight the selected content. It's magic.
+Verbatim is a jQuery plugin that allows deep-linking directly to content. When installed, website visitors will be able to highlight text content (or select images), generate a direct link to the content, and share the link via Twitter. When a user clicks on the generated link, the page will scroll and highlight the selected content. It's magic.
 
 Verbatim was built by [Ramsay Lanier](https://github.com/ramsaylanier) and [Maxim Leyzerovich](https://github.com/duqe) from [nclud](http://nclud.com). 
 
@@ -121,6 +121,13 @@ Sets the scrolling speed.
 
 Sets the amount of offset(in pixels) from the top of found content. Verbatim will scroll to the found content's offset less the amount of offset. This allows for some spacing between the top of the window and the found content.
 
+
+###allowImages
+**default**: true
+
+**type**: boolean
+
+By default, Verbatim will also allow users to select and share links to images as well. If you'd like to turn this feature off, sell allowImages to false.
 
 ##Using Bitly For Link Shortening
 
