@@ -48,7 +48,7 @@
 			isImage = true;
 		}
 
-		$.fn.findHash = function(sanitizedHash, settings){
+		var findHash = function(sanitizedHash, settings){
 
 			if (isImage && settings.allowImages){
 				var targetImage = $("img[src$='" + sanitizedHash + "']");
@@ -60,7 +60,7 @@
 			}
 
 			else {
-		        var sel = self.getSelected();
+		        var sel = getSelected();
 
 		        sel.collapse(document.body, 0);
 
@@ -108,7 +108,7 @@
 			}
 		}
 
-		$.fn.getSelected = function(){
+		var getSelected = function(){
 			if(window.getSelection)
 				return window.getSelection(); 
 			else if(document.getSelection)
@@ -123,7 +123,7 @@
 	        return false;
 		}
 
-		$.fn.insertCopyButton = function(target){
+		var insertCopyButton = function(target){
 
 			//reset
 			$('.' + settings.buttonClass).remove();
@@ -160,7 +160,7 @@
 				buttonContainer.setAttribute("class", settings.buttonClass);
 				buttonContainer.innerHTML = verbatimLogo + twitterLogo;
 				
-				var sel = self.getSelected();
+				var sel = getSelected();
 
 				if(!sel.isCollapsed){
 
@@ -201,7 +201,7 @@
 		    } 
 		}
 
-		$.fn.copyURL = function(){
+		var copyURL = function(){
 			$('.verbatim-text-area').remove();
 
 			textURL = selectedText;
@@ -220,17 +220,17 @@
 				    {
 				    	if (response.status_code == 200){
 				    		longURL = response.data.url;
-				    		self.generateLink();
+				    		generateLink();
 				    	}
 				    }
 				);
 			} else {
 				longURL = window.location.origin + window.location.pathname + '#' + encodeURIComponent(textURL);
-				self.generateLink();
+				generateLink();
 			}
 		}
 
-		$.fn.generateLink = function(){
+		var generateLink = function(){
 			if (withTwitter){
 				if (textURL.length > 112){
 					textURL = textURL.substring(0, 112) + '...';
@@ -263,19 +263,19 @@
 
 			if ($(event.target).is('#verbatimLogo')){
 				withTwitter = false;
-				self.copyURL();
+				copyURL();
 			} else if ($(event.target).is('#twitterLogo')){
 				withTwitter = true;
-				self.copyURL();
+				copyURL();
 			} else if ($(event.target).hasClass('verbatim-text-area')){
 				return false;
 			} else 
-				self.insertCopyButton(event.target);
+				insertCopyButton(event.target);
 
 		});
 
 		if (sanitizedHash)
-			self.findHash(sanitizedHash, settings);
+			findHash(sanitizedHash, settings);
 	}
 
 }(window.jQuery);
