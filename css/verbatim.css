@@ -9,6 +9,7 @@
 	background-color: rgb(83, 83, 83);
 	top: -50px;
 	z-index: 1000;
+	box-sizing: border-box;
 }
 
 .verbatim-button-container::after{
@@ -21,6 +22,7 @@
 	margin-left: -4px;
 	bottom: -4px;
 	transform: rotate(45deg);
+	box-sizing: border-box;
 }
 
 .verbatim-icon{
@@ -28,6 +30,7 @@
 	height: 100%;
 	padding: 5px;
 	cursor: pointer;
+	box-sizing: border-box;
 }
 
 .verbatim-icon circle, .verbatim-icon path{
@@ -50,4 +53,5 @@
 	left: 50%;
 	margin-left:-75px;
 	padding: 10px;
+	box-sizing: border-box;
 }
