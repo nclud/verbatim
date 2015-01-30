@@ -12,7 +12,7 @@ Verbatim is released under the [GNU GPLv3 license](http://www.gnu.org/licenses/g
 
 ##Installation
 
-Verbatim is available as a jQuery plugin. It is also available as a [wordpress plugin](http://wordpress.org), and a [meteor.js package](http://atmosphere.js). 
+Verbatim is available as a jQuery plugin. It is also available as a [wordpress plugin](http://wordpress.org), [craft plugin](https://github.com/nclud/verbatim-craft), and a [meteor.js package](http://atmosphere.js). 
 
 1 - Ensure that jQuery included inside of the head tag.
 
