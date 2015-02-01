@@ -30,7 +30,6 @@
 
 
 	$.fn.verbatim = function(options){
-		var self = this;
 		var hash = window.location.hash;
 		hash = hash.replace("%C2%A0", "%20");
 		var sanitizedHash = decodeURIComponent(hash).substr(1);
