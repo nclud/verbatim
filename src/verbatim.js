@@ -30,6 +30,7 @@
 
 
 	$.fn.verbatim = function(options){
+		
 		var hash = window.location.hash;
 		hash = hash.replace("%C2%A0", "%20");
 		var sanitizedHash = decodeURIComponent(hash).substr(1);
@@ -48,7 +49,7 @@
 		}
 
 		var isIE = function(){
-
+		
 	      var ua = window.navigator.userAgent
 	      var msie = ua.indexOf ( "MSIE " )
 
@@ -265,7 +266,7 @@
 			}
 		}
 
-		if(! isIE){
+		if(! isIE()){
 
 			$(settings.searchContainer).on('mousedown', function(event){	
 				downY = event.offsetY;
