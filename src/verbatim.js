@@ -1,5 +1,5 @@
 /*!
-* Verbatim.js 1.1.0
+* Verbatim.js 1.3.0
 *
 * Copyright 2014, nclud http://nclud.com
 * Released under the GNU GPLv3 license
@@ -30,6 +30,7 @@
 
 
 	$.fn.verbatim = function(options){
+		
 		var hash = window.location.hash;
 		hash = hash.replace("%C2%A0", "%20");
 		var sanitizedHash = decodeURIComponent(hash).substr(1);
@@ -45,6 +46,18 @@
 		if (sanitizedHash.substr(0, 5) == "image"){
 			sanitizedHash = sanitizedHash.substr(7);
 			isImage = true;
+		}
+
+		var isIE = function(){
+		
+	      var ua = window.navigator.userAgent
+	      var msie = ua.indexOf ( "MSIE " )
+
+	      if ( msie > 0 )      // If Internet Explorer, return version number
+	         return parseInt (ua.substring (msie+5, ua.indexOf (".", msie )))
+	      else                 // If another browser, return 0
+	         return 0
+
 		}
 
 		var findHash = function(sanitizedHash, settings){
@@ -152,7 +165,6 @@
 
 			//if target is a text node
 			else if (!$(target).hasClass(settings.selectedClass)){
-				
 				$('.' + settings.selectedClass).contents().unwrap();
 
 				var buttonContainer = document.createElement("div");
@@ -168,6 +180,7 @@
 
 						document.execCommand("HiliteColor", false, settings.highlightColor);
 				      	var anchorNode = sel.focusNode.parentNode;
+				      	var extentNode = sel.extentNode.parentNode;
 				      	appendButton();
 
 				      	document.body.contentEditable = "false";
@@ -176,6 +189,7 @@
 						document.designMode = "on";
 						document.execCommand("HiliteColor", false, settings.highlightColor);
 				      	var anchorNode = sel.anchorNode.parentNode;
+				      	var extentNode = sel.extentNode.parentNode;
 				      	appendButton();
 
 				      	document.designMode = "off";
@@ -188,6 +202,7 @@
 		    function appendButton(){
 		    	var target;
 		    	$(anchorNode).addClass(settings.selectedClass).append(buttonContainer);
+		    	$(extentNode).addClass(settings.selectedClass);
 
 		    	if ((upY - downY) > 15)
 		    		target = 0
@@ -205,8 +220,6 @@
 
 			textURL = selectedText;
 			longURL = window.location.origin + window.location.pathname + '#' + encodeURIComponent(textURL);
-
-			console.log(longURL);
 
 			if (settings.bitlyToken){
 				$.getJSON(
@@ -253,28 +266,32 @@
 			}
 		}
 
-		$(settings.searchContainer).on('mousedown', function(event){	
-			downY = event.offsetY;
-		});
+		if(! isIE()){
 
-		$(settings.searchContainer).on('mouseup', function(event){
-			upY = event.offsetY;
+			$(settings.searchContainer).on('mousedown', function(event){	
+				downY = event.offsetY;
+			});
 
-			if ($(event.target).is('#verbatimLogo')){
-				withTwitter = false;
-				copyURL();
-			} else if ($(event.target).is('#twitterLogo')){
-				withTwitter = true;
-				copyURL();
-			} else if ($(event.target).hasClass('verbatim-text-area')){
-				return false;
-			} else 
-				insertCopyButton(event.target);
+			$(settings.searchContainer).on('mouseup', function(event){
+				upY = event.offsetY;
 
-		});
+				if ($(event.target).is('#verbatimLogo')){
+					withTwitter = false;
+					copyURL();
+				} else if ($(event.target).is('#twitterLogo')){
+					withTwitter = true;
+					copyURL();
+				} else if ($(event.target).hasClass('verbatim-text-area')){
+					return false;
+				} else 
+					insertCopyButton(event.target);
 
-		if (sanitizedHash)
-			findHash(sanitizedHash, settings);
+			});
+
+			if (sanitizedHash)
+				findHash(sanitizedHash, settings);			
+		}
+
 	}
 
 }(window.jQuery);
