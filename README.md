@@ -49,7 +49,7 @@ $(document).verbatim({
  animated: true,
  animationSpeed: 2000,
  highlightParent: false,
- highlightColor: '#236075',
+ highlightColor: 'rgb(134, 21, 210)',
  bitlyToken: '123456789012345980700123123'
 });
 ```
