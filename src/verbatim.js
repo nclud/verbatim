@@ -19,7 +19,7 @@
 		highlightParent: true,
 		searchContainer: 'body',
 		highlightedClass: 'highlight',
-		highlightColor: '#FFFF00',
+		highlightColor: 'rgb(255,255,0)',
 		selectedClass: 'verbatim-selected-text',
 		buttonClass: 'verbatim-button-container',
 		animated: true,
@@ -27,7 +27,6 @@
 		scrollingOffset: 200,
 		allowImages: true
 	}
-
 
 	$.fn.verbatim = function(options){
 		
@@ -140,6 +139,7 @@
 			//reset
 			$('.' + settings.buttonClass).remove();
 			$('.verbatim-text-area').remove();
+			$('.' + settings.selectedClass).contents().unwrap();
 
 			//if target is an image
 			if (settings.allowImages && $(target).is('img') && !$(target).hasClass(settings.selectedClass)){
@@ -165,8 +165,6 @@
 
 			//if target is a text node
 			else if (!$(target).hasClass(settings.selectedClass)){
-				$('.' + settings.selectedClass).contents().unwrap();
-
 				var buttonContainer = document.createElement("div");
 				buttonContainer.setAttribute("class", settings.buttonClass);
 				buttonContainer.innerHTML = verbatimLogo + twitterLogo;
@@ -180,7 +178,6 @@
 
 						document.execCommand("HiliteColor", false, settings.highlightColor);
 				      	var anchorNode = sel.focusNode.parentNode;
-				      	var extentNode = sel.extentNode.parentNode;
 				      	appendButton();
 
 				      	document.body.contentEditable = "false";
@@ -189,7 +186,6 @@
 						document.designMode = "on";
 						document.execCommand("HiliteColor", false, settings.highlightColor);
 				      	var anchorNode = sel.anchorNode.parentNode;
-				      	var extentNode = sel.extentNode.parentNode;
 				      	appendButton();
 
 				      	document.designMode = "off";
@@ -201,8 +197,8 @@
 
 		    function appendButton(){
 		    	var target;
-		    	$(anchorNode).addClass(settings.selectedClass).append(buttonContainer);
-		    	$(extentNode).addClass(settings.selectedClass);
+		    	$(anchorNode).append(buttonContainer);
+		    	$('span[style*="'+settings.highlightColor+'"]').addClass(settings.selectedClass);
 
 		    	if ((upY - downY) > 15)
 		    		target = 0
