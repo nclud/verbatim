@@ -77,6 +77,8 @@
 
 		        while (window.find(sanitizedHash)) {
 
+		        	document.body.spellcheck = false;
+
 	        		if (isFirefox){
 						document.body.contentEditable = "true";
 
@@ -172,6 +174,8 @@
 				var sel = getSelected();
 
 				if(!sel.isCollapsed){
+
+					document.body.spellcheck = false;
 
 					if (isFirefox){
 						document.body.contentEditable = "true";
