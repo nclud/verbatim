@@ -3,55 +3,61 @@
 }
 
 .verbatim-button-container{
-	position: absolute;
-	width: 90px;
-	height: 40px;
+	position: fixed;
+	width: 100%;
 	background-color: rgb(83, 83, 83);
-	top: -50px;
-	z-index: 1000;
-	box-sizing: border-box;
+	bottom: 0px;
+	padding: 5px;
+	z-index: 10000000;
+	text-align: center;
+	transition: all 300ms ease-out;
+	-webkit-transition: all 300ms ease-out;
+	-moz-transition: all 300ms ease-out;
+	transform: translateY(100px);
+	-webkit-transform: translateY(100px);
+	-moz-transform: translateY(100px);
 }
 
-.verbatim-button-container::after{
-	content: '';
-	position: absolute;
-	width: 8px;
-	height: 8px;
-	background-color: rgb(83, 83, 83);
-	left: 50%;
-	margin-left: -4px;
-	bottom: -4px;
-	transform: rotate(45deg);
-	box-sizing: border-box;
-}
+.verbatim-button-container.on-page{
+	transform: translateY(0px);
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+} 
 
 .verbatim-icon{
-	width: 50%;
 	height: 100%;
 	padding: 5px;
 	cursor: pointer;
-	box-sizing: border-box;
 }
 
 .verbatim-icon circle, .verbatim-icon path{
 	pointer-events:none;
 }
 
-.verbatim-icon:first-of-type{
-	border-right: 1px solid white;
+.verbatim-wrapper{
+	max-width: 400px;
+	position: relative;
+	margin: 0 auto;
 }
 
 .verbatim-text-area{
-	position: absolute;
+	position: relative;
 	background-color: rgb(83, 83, 83);
-	border: none;
-	border-right: 10px solid rgb(83, 83, 83);
+	border: 2px solid white;
 	color: white;
-	top: -40px;
-	width: 140px;
-	height: 35px;
-	left: 50%;
-	margin-left:-75px;
-	padding: 10px;
-	box-sizing: border-box;
+	max-width: 140px;
+	height: 40px;
+	padding: 10px
 }
+
+.verbatim-info{
+	color: white;
+	font-size: .8rem;
+	margin: 0;
+}
+
+.verbatim-twitter-link{
+	height: 40px;
+	display: inline-block;
+	margin-left: 1rem;
+} 
