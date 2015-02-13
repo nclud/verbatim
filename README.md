@@ -1,6 +1,8 @@
 Verbatim
 ===========
 
+*Important: Verbatim is still in development beta is and has some issues in Firefox, and is completly unstable in IE.*
+
 Verbatim is a jQuery plugin that allows deep-linking directly to content. When installed, website visitors will be able to highlight text content (or select images), generate a direct link to the content, and share the link via Twitter. When a user clicks on the generated link, the page will scroll and highlight the selected content. It's magic.
 
 [See the Demo](http://bit.ly/1xBkb95)
