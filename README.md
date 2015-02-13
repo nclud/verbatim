@@ -1,4 +1,4 @@
-Verbatim
+Verbatim - V 0.1.4
 ===========
 
 *Important: Verbatim is still in development beta is and has some minor issues in Firefox. While it doesn't work in IE, it won't break anything.*
