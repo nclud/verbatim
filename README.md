@@ -62,7 +62,7 @@ Verbatim comes with the following default settings:
 
 ###highlightParent
 **default**: true
-d
+
 **type**: boolean
 
 Set highlightParent to true if you want to highlight the parent element of the text that is selected.
