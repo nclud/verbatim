@@ -11,6 +11,7 @@
 	padding: 5px;
 	z-index: 10000000;
 	text-align: center;
+	box-sizing: border-box;
 	transition: all 300ms ease-out;
 	-webkit-transition: all 300ms ease-out;
 	-moz-transition: all 300ms ease-out;
@@ -29,6 +30,7 @@
 	height: 100%;
 	padding: 5px;
 	cursor: pointer;
+	box-sizing: border-box;
 }
 
 .verbatim-icon circle, .verbatim-icon path{
@@ -49,6 +51,7 @@
 	max-width: 140px;
 	height: 40px;
 	padding: 10px
+	box-sizing: border-box;
 }
 
 .verbatim-info{
