@@ -38,8 +38,6 @@
 		var isImage = false;
 		var selectionChange = false;
 
-		var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
 		var isFirefox = /Firefox/.test(navigator.userAgent);
 		var isiOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
 
