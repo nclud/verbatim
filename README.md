@@ -1,9 +1,13 @@
-Verbatim - V 0.1.4
+Verbatim - V 0.1.5
 ===========
 
 *Important: Verbatim is still in development beta and has some minor issues in Firefox. While it doesn't work in IE, it won't break anything.*
 
+**Update: Verbatim now works on most iOS and andriod devices!**
+
 Verbatim is a jQuery plugin that allows deep-linking directly to content. When installed, website visitors will be able to highlight text content (or select images), generate a direct link to the content, and share the link via Twitter. When a user clicks on the generated link, the page will scroll and highlight the selected content. It's magic.
+
+
 
 [See the Demo](http://bit.ly/1xBkb95)
 
